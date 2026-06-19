@@ -1,0 +1,28 @@
+{
+  "name": "causalfunnel-user-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Simple full-stack user analytics tracker and dashboard for the CausalFunnel assignment.",
+  "scripts": {
+    "dev": "concurrently \"npm run api\" \"npm run client\"",
+    "api": "node server/index.js",
+    "client": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "node --check server/index.js && node --check server/models/Event.js && node --check server/routes/events.js && node --check public/tracker.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "mongoose": "^8.9.2",
+    "vite": "^6.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {}
+}

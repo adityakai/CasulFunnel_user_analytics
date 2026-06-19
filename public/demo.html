@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CausalFunnel Analytics Demo</title>
+    <script>
+      const apiBaseUrl = new URLSearchParams(window.location.search).get('api');
+      if (apiBaseUrl) {
+        window.CF_ANALYTICS = { apiBaseUrl };
+      }
+    </script>
+    <script defer src="/tracker.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Serif+4:ital,wght@1,500&display=swap');
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Poppins, sans-serif;
+        color: white;
+        background: #060606;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      video {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.72;
+      }
+      main {
+        position: relative;
+        width: min(900px, calc(100vw - 32px));
+        padding: 48px;
+        border-radius: 32px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(34px);
+        box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 40px 120px rgba(0,0,0,0.45);
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 9vw, 112px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        font-weight: 500;
+      }
+      em {
+        font-family: 'Source Serif 4', serif;
+        color: rgba(255,255,255,0.78);
+      }
+      p {
+        margin: 22px auto 32px;
+        max-width: 620px;
+        color: rgba(255,255,255,0.75);
+      }
+      button, a {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        color: white;
+        padding: 14px 20px;
+        font: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        gap: 10px;
+        margin: 6px;
+        transition: transform 160ms ease;
+      }
+      button:hover, a:hover { transform: scale(1.05); }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop playsinline src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4"></video>
+    <main>
+      <h1>Track the <em>journey</em> beautifully.</h1>
+      <p>Use this page to generate page views and click events. Open the dashboard, refresh sessions, and inspect the heatmap.</p>
+      <button>Primary CTA</button>
+      <button>Gallery Tile</button>
+      <a href="/">Open Dashboard</a>
+    </main>
+  </body>
+</html>
